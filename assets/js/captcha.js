@@ -36,7 +36,7 @@ function check_captcha() {
     $('#loginBerhasil').attr('data-bs-toggle', 'modal').attr('data-bs-target', '#loginBerhasil');
     $('#loginBerhasil').modal('show');
     setTimeout(function () {
-      window.location.href = 'file:///D:/_Tugas%20Kuliah/WebFun/FORMATIF/assets/dashboard.html';
+      window.location.href = 'file:///D:/_Tugas%20Kuliah/WebFun/FORMATIF/dashboard.html';
     }, 2000);
   } else {
     // output.className = 'incorrectCaptcha';
