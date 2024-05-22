@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Login</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Poppins';
+      }
+    </style>
+  </head>
+  <body>
+    <form id="loginForm">
+      <section class="d-flex align-items-center" style="min-height: 100vh">
+        <div class="container">
+          <div class="d-flex justify-content-center">
+            <div class="col-lg-8">
+              <div class="card shadow rounded-4 px-4 py-5">
+                <div class="row">
+                  <div class="col-lg-6 my-auto">
+                    <div class="d-flex justify-content-between mb-3">
+                      <img src="../assets/img/tagline.png" alt="tagline" width="30%" />
+                      <img src="../assets/img/lp3i.png" alt="lp3i" width="45%" />
+                    </div>
+                    <div class="mx-3 mt-3">
+                      <label for="email" class="fw-bold">Email</label>
+                      <input type="email" name="email" id="email" class="form-control mt-1" autocomplete="off" placeholder="example@gmail.com" />
+                      <small class="d-none text-danger" id="requiredEmail">Email tidak boleh kosong!</small>
+                    </div>
+                    <div class="mx-3 mt-3">
+                      <label for="password" class="fw-bold">Password</label>
+                      <input type="password" name="password" id="password" class="form-control mt-1" placeholder="Input Password Here .." />
+                      <small class="d-none text-danger" id="requiredPassword">Password tidak boleh kosong!</small>
+                    </div>
+                    <!-- Show Password -->
+                    <div class="d-flex mx-3 mt-1">
+                      <input id="togglePassword" type="checkbox" />
+                      <small for="togglePassword" class="mx-2">Show Password</small>
+                    </div>
+                    <div class="mx-3 mt-3 d-flex justify-content-end">
+                      <button type="submit" class="btn btn-primary form-control">Submit</button>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 my-auto">
+                    <img src="../assets/img/bg-login-1.svg" alt="bg-login" width="100%" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </form>
+
+    <div class="modal fade" id="loginBerhasil" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-info fw-bold" id="exampleModalLabel">Success</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-check-circle text-info" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path d="m10.97 4.97-.02.022-3.473 4.425-2.093-2.094a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05" />
+            </svg>
+            <h1 class="text-info fw-bold">Berhasil</h1>
+            <p>Login Berhasil Tunggu Sebentar ...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="loginGagal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 text-danger fw-bold" id="exampleModalLabel">Error</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body text-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-x-circle text-danger" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708" />
+            </svg>
+            <h1 class="text-danger fw-bold">Gagal</h1>
+            <p>Login Gagal, Email atau Password Salah!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
