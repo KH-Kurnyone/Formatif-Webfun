@@ -52,7 +52,7 @@ $(document).ready(function () {
       $('#loginBerhasil').attr('data-bs-toggle', 'modal').attr('data-bs-target', '#loginBerhasil');
       $('#loginBerhasil').modal('show');
       setTimeout(function () {
-        window.location.href = 'file:///D:/_Tugas%20Kuliah/WebFun/FORMATIF/captcha.html';
+        window.location.href = 'captcha.html';
       }, 3000);
     } else if (email !== '' && password !== '') {
       $('#loginGagal').attr('data-bs-toggle', 'modal').attr('data-bs-target', '#loginGagal');
